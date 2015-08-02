@@ -1,0 +1,28 @@
+<script type="text/javascript">
+//<![CDATA[
+function vcUpdateInfor(id, field) {
+	vcWaiting('#' + field + '_waiting_' + id, true);
+	value = jQuery("#" + field + "_value_" + id).val();
+	if (value > 0) {
+		jQuery.ajax({
+			type: 'POST',
+			dataType: 'json',
+			url: '<?php echo $this->getUrl('vc_easyupdateproductinfor/adminhtml_index/update');?>',
+			data: {id: id, field : field, value: value, form_key: '<?php echo Mage::getSingleton('core/session')->getFormKey();?>'}
+		}).done(function(result) {
+			if (result.error) {
+				alert(result.error);
+			}
+			if (result.id && result.field && result.value) {
+				vcWaiting('#' + result.field + '_waiting_' + result.id, false);
+				vcToolHide(result.id, result.field, result.value);
+			}
+			
+		}).error(function(result) {
+			jQuery('id^="price_waiting"').hide();
+			jQuery('id^="qty_waiting"').hide();
+		});
+	}			
+}
+//]]>
+</script>

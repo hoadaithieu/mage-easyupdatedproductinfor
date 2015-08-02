@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<layout>
+	<default>
+	</default>
+    <adminhtml_catalog_product_index>
+		<reference name="head">
+			<action method="addItem" ifconfig="vc_easyupdateproductinfor/general/enable"><type>skin_css</type><name>vc_easyupdateproductinfor/css/styles.css</name><params/></action>
+			<action method="addItem" ifconfig="vc_easyupdateproductinfor/general/enable"><type>skin_js</type><name>vc_easyupdateproductinfor/js/jquery/jquery-1.10.2.js</name><params/></action>
+			<action method="addItem" ifconfig="vc_easyupdateproductinfor/general/enable"><type>skin_js</type><name>vc_easyupdateproductinfor/js/jquery/noconflict.js</name><params/></action>
+			<action method="addItem" ifconfig="vc_easyupdateproductinfor/general/enable"><type>skin_js</type><name>vc_easyupdateproductinfor/js/scripts.js</name><params/></action>
+		</reference>	
+		<reference name="js">
+			<block type="vc_easyupdateproductinfor/adminhtml_js" name="vc_easyupdateproductinfor.js" as="vc_easyupdateproductinfor.js">
+				<action method="setTemplate" ifconfig="vc_easyupdateproductinfor/general/enable"><template>vc_easyupdateproductinfor/js.phtml</template></action>
+			</block>
+		</reference>
+    </adminhtml_catalog_product_index>
+
+    <adminhtml_catalog_product_grid>
+		<reference name="admin.product.grid">
+			<action method="setTemplate" ifconfig="vc_easyupdateproductinfor/general/enable"><template>vc_easyupdateproductinfor/catalog/product/grid.phtml</template></action>
+		</reference>
+    </adminhtml_catalog_product_grid>
+	
+</layout>

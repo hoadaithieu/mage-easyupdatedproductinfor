@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<VC_EasyUpdateProductInfor>
+			<active>true</active>
+			<codePool>community</codePool>
+			<version>0.1.0</version>
+			<depends>
+                <Mage_Catalog/>
+				
+            </depends>			
+		</VC_EasyUpdateProductInfor>
+	</modules>
+</config>

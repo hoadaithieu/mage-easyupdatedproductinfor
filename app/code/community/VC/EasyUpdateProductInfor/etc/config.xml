@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <VC_EasyUpdateProductInfor>
+            <version>1.0.0</version>
+        </VC_EasyUpdateProductInfor>
+    </modules>
+    <frontend>
+        <routers>
+            <vc_easyupdateproductinfor>
+                <use>standard</use>
+                <args>
+                    <module>VC_EasyUpdateProductInfor</module>
+                    <frontName>vc_easyupdateproductinfor</frontName>
+                </args>
+            </vc_easyupdateproductinfor>
+        </routers>
+        <layout>
+            <updates>
+                <vc_easyupdateproductinfor>
+                    <file>vc_easyupdateproductinfor.xml</file>
+                </vc_easyupdateproductinfor>
+            </updates>
+        </layout>
+    </frontend>
+    <admin>
+        <routers>
+			<vc_easyupdateproductinfor>
+				<use>admin</use>
+				<args>
+					<module>VC_EasyUpdateProductInfor</module>
+					<frontName>vc_easyupdateproductinfor</frontName>
+				</args>
+			</vc_easyupdateproductinfor>
+        </routers>
+    </admin>
+    <adminhtml>
+		
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<vc_all>
+							<children>
+					
+								<vc_easyupdateproductinfor>
+									<title>VC EasyUpdateProductPrice</title>
+									<sort_order>70</sort_order>						
+									
+								</vc_easyupdateproductinfor>
+							</children>
+						</vc_all>
+						<system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <vc_easyupdateproductinfor>
+                                            <title>VC EasyUpdateProductPrice Section</title>
+                                        </vc_easyupdateproductinfor>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+												
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		<layout>
+			<updates>
+				<vc_easyupdateproductinfor>
+					<file>vc_easyupdateproductinfor.xml</file>
+				</vc_easyupdateproductinfor>
+			</updates>
+		</layout>
+    </adminhtml>   
+    <global>
+        <models>
+            <vc_easyupdateproductinfor>
+                <class>VC_EasyUpdateProductInfor_Model</class>
+                <resourceModel>vc_easyupdateproductinfor_resource</resourceModel>
+            </vc_easyupdateproductinfor>
+        </models>	
+		
+		<resources>
+			<vc_easyupdateproductinfor_setup>
+				<setup>
+					<module>VC_EasyUpdateProductInfor</module>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</vc_easyupdateproductinfor_setup>
+			<vc_easyupdateproductinfor_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</vc_easyupdateproductinfor_write>
+			<vc_easyupdateproductinfor_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</vc_easyupdateproductinfor_read>
+		</resources>
+				
+        <blocks>
+            <vc_easyupdateproductinfor>
+                <class>VC_EasyUpdateProductInfor_Block</class>
+            </vc_easyupdateproductinfor>
+			
+			<adminhtml>
+				<rewrite>
+					<catalog_product_grid>VC_EasyUpdateProductInfor_Block_Adminhtml_Catalog_Product_Grid</catalog_product_grid>
+				</rewrite> 
+			</adminhtml>       
+		</blocks>
+	
+        <helpers>
+            <vc_easyupdateproductinfor>
+                <class>VC_EasyUpdateProductInfor_Helper</class>
+            </vc_easyupdateproductinfor>
+        </helpers>
+		
+    </global>
+	
+	<default>
+		<vc_easyupdateproductinfor>
+			<general>
+				<enable>0</enable>
+			</general>
+		</vc_easyupdateproductinfor>
+	</default>
+	
+</config>
